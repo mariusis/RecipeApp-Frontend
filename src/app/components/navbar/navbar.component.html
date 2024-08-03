@@ -1,0 +1,22 @@
+<mat-toolbar>
+  <button mat-icon-button (click)="toggleSidenav()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>Recipe App</span>
+
+  <div>
+    <button mat-button routerLink="/about">About</button>
+    <button mat-button routerLink="/favorites">Favorites</button>
+  </div>
+
+  <div class="spacer"></div>
+
+  <div *ngIf="isLoggedIn; else loggedInBlock">
+    <button mat-button routerLink="/login">Login</button>
+    <button mat-button routerLink="/register">Sign Up</button>
+  </div>
+  <ng-template #loggedInBlock>
+    <button mat-button routerLink="/new-recipe">New Recipe</button>
+    <button mat-button (click)="logout()">Logout</button>
+  </ng-template>
+</mat-toolbar>

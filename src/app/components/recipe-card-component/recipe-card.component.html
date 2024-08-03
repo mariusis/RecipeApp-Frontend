@@ -1,0 +1,15 @@
+<div class="recipes">
+  <div class="card" *ngFor="let recipe of recipes">
+    <img class="food-photo" src="../../assets/food.jpg" alt="Food Photo" />
+    <p>{{ recipe.name }}</p>
+    <p>{{ recipe.description }}</p>
+
+    <p class="author-name">{{ recipe.author }}</p>
+    <div class="action-buttons">
+      <button class="fav-button">
+        <i class="far fa-heart heart-icon"></i>
+      </button>
+      <button class="like-button">Like</button>
+    </div>
+  </div>
+</div>

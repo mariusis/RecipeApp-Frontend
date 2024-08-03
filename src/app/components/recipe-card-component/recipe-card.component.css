@@ -1,0 +1,64 @@
+/* recipe-card.component.css */
+.recipes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Create 4 columns of equal width */
+  grid-gap: 20px; /* Add some space between grid items */
+  justify-content: space-evenly;
+  padding: 0 10px;
+  @media screen and (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.card {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1vh;
+  border: 1px solid #e0e0e0; /* Add a border */
+}
+
+.food-photo {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.author-name {
+  font-style: italic;
+}
+
+.action-buttons {
+  display: flex;
+  align-items: center;
+}
+
+.like-button {
+  background-color: #007bff; /* Change the color as needed */
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.fav-button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  border-radius: 50%;
+  border: none;
+  background-color: #f9f9f9;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.fav-button:hover {
+  background-color: #ecd9d9;
+}
+
+.heart-icon {
+  color: red;
+}

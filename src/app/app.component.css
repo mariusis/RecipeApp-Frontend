@@ -1,0 +1,6 @@
+.main-layout {
+  width: 100vw; /* 100% of the viewport width */
+  height: 100vh; /* Optional: 100% of the viewport height */
+  margin: 0;
+  padding: 0;
+}

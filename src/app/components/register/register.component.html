@@ -1,0 +1,41 @@
+<div class="container-fluid">
+    <!-- row justify-content-center is used for centering the register form -->
+    <div class="row justify-content-center">
+      <!-- Making the form responsive -->
+      <div class="col-12 col-sm-6 col-md-4">
+        <form class="form-container">
+          <!-- Binding the label and input for First Name -->
+          <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" class="form-control" id="firstName" placeholder="Enter your first name">
+          </div>
+          <!-- Binding the label and input for Last Name -->
+          <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input type="text" class="form-control" id="lastName" placeholder="Enter your last name">
+          </div>
+          <!-- Binding the label and input for Email -->
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter your email">
+          </div>
+          <!-- Binding the label and input for Password -->
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" placeholder="Enter your password">
+          </div>
+          <!-- Binding the label and input for Password Confirmation -->
+          <div class="form-group">
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm your password">
+          </div>
+          <!-- Add other fields as required for the recipe app registration form -->
+          <button type="submit" class="btn btn-primary btn-block">Register</button>
+          <div class="form-footer">
+            <p>Already have an account?</p>
+            <button routerLink="/login">Log In</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>

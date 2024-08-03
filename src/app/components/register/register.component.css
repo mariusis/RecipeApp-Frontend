@@ -1,0 +1,25 @@
+/* styles.css or your custom CSS file */
+.form-container {
+    position: relative; /* Set position to relative for centering */
+    top: 50%; /* Move the top of the form to the middle of the container */
+    transform: translateY(-50%); /* Adjust the form position to center vertically */
+    max-width: 400px; /* Set a maximum width for the form */
+    padding: 20px; /* Add padding around the form */
+    border: 1px solid #ccc; /* Optional: Add a border for visual separation */
+    text-align: center; /* Center align the form content */
+    margin-left: auto; /* Center the form horizontally */
+    margin-right: auto; /* Center the form horizontally */
+    margin-top: 15vh; /* Adjust the top margin to center more accurately */
+  }
+  
+  .form-group {
+    margin-bottom: 20px; /* Add spacing between form groups */
+  }
+  
+  .form-footer {
+    margin-top: 20px; /* Add spacing above the form footer */
+  }
+  
+  .btn-block {
+    width: 100%; /* Make the button full width within the form container */
+  }
