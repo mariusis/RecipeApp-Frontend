@@ -1,18 +1,15 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable, throwError } from 'rxjs';
-import { LocalStorageService } from './local-storage.service';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class RecipeService {
-  private apiUrl = 'http://localhost:8080/api/v1/recipes'; // Ensure this is a valid URL
+  private apiUrl = environment.apiUrl + 'v1/recipes'; // Ensure this is a valid URL
 
-  constructor(
-    private http: HttpClient,
-    private localStorageService: LocalStorageService
-  ) {}
+  constructor(private http: HttpClient) {}
 
   getRecipes(): Observable<any> {
     return this.http.get(this.apiUrl).pipe(catchError(this.handleError));

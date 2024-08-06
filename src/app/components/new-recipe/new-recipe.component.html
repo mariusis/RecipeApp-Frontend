@@ -1,1 +1,31 @@
-<p>new-recipe-component works!</p>
+<div class="container">
+  <form [formGroup]="recipeForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="recipeName">Recipe Name:</label>
+      <input
+        id="recipeName"
+        formControlName="name"
+        placeholder="Enter recipe name"
+      />
+    </div>
+    <div>
+      <label for="description">Description:</label>
+      <textarea
+        id="description"
+        formControlName="description"
+        rows="5"
+        placeholder="Enter description"
+      ></textarea>
+    </div>
+    <div>
+      <label for="instructions">Instructions:</label>
+      <textarea
+        id="instructions"
+        formControlName="instructions"
+        rows="5"
+        placeholder="Enter instructions"
+      ></textarea>
+    </div>
+    <button type="submit" [disabled]="recipeForm.invalid">Submit</button>
+  </form>
+</div>

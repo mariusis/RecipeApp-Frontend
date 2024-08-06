@@ -8,17 +8,15 @@ import {
 } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { LocalStorageService } from '../services/local-storage.service';
-
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
-  constructor(private localStorageService: LocalStorageService) {}
+  constructor() {}
 
   intercept(
     req: HttpRequest<any>,
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
-    const token = this.localStorageService.getItem('jwtToken');
+    const token = localStorage.getItem('jwtToken');
 
     let authReq = req;
     if (token) {
@@ -30,7 +28,7 @@ export class AuthInterceptor implements HttpInterceptor {
     return next.handle(authReq).pipe(
       catchError((error: HttpErrorResponse) => {
         if (error.status === 401) {
-          this.localStorageService.removeItem('jwtToken');
+          localStorage.removeItem('jwtToken');
           window.location.href = '/login';
         }
         return throwError(error);

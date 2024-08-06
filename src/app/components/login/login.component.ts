@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { LoginService } from '../../auth/login.service';
+import { Router, RouterModule } from '@angular/router';
+import { AuthService } from '../../auth/auth.service';
 import { FormsModule } from '@angular/forms';
-import { LocalStorageService } from '../../services/local-storage.service';
+
 import { Authentication } from '../../models/authentication.model';
 
 @Component({
@@ -16,16 +16,17 @@ export class LoginComponent {
   username: string = '';
   password: string = '';
 
-  constructor(private loginService: LoginService) {}
+  constructor(private authService: AuthService, private router: Router) {}
 
   login() {
     const authentication: Authentication = {
       email: this.username,
       password: this.password,
     };
-    this.loginService.login(authentication).subscribe(
+    this.authService.login(authentication).subscribe(
       (response) => {
         console.log('Login successful:', response);
+        this.router.navigate(['/']);
       },
       (error) => {
         console.error('Login failed:', error);
