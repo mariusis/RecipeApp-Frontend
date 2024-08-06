@@ -5,6 +5,7 @@ import { Authentication } from '../models/authentication.model';
 import { Router } from '@angular/router';
 import { BehaviorSubject, Observable, throwError } from 'rxjs';
 import { environment } from '../../environments/environment';
+import { RegisterRequest } from '../models/registerRequest.model';
 @Injectable({
   providedIn: 'root',
 })
@@ -66,14 +67,7 @@ export class AuthService {
     );
   }
 
-  register() {
-    console.log('Registering...');
-    const registerRequest = {
-      firstName: 'Marius-Gabriel',
-      lastName: 'Andronescu',
-      email: 'mariusandronescu1@gmail.com',
-      password: 'password',
-    };
+  register(registerRequest: RegisterRequest) {
     return this.http.post<any>(this.apiUrl + '/register', registerRequest).pipe(
       tap((response) => {
         console.log(response);
