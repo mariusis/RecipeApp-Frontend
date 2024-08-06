@@ -7,7 +7,7 @@ import { environment } from '../../environments/environment';
   providedIn: 'root',
 })
 export class RecipeService {
-  private apiUrl = environment.apiUrl + 'v1/recipes'; // Ensure this is a valid URL
+  private apiUrl = environment.apiUrl + '/v1/recipes'; // Ensure this is a valid URL
 
   constructor(private http: HttpClient) {}
 
